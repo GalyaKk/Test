@@ -6,7 +6,6 @@ public class RegisterAccountPageTest extends BaseTest{
     @Test
     public void registerNewAccount (){
         HomePageTest.goToRegisterAccount();
-        RegisterAccountPage.waitUntilFirstnameFieldIsVisible();
         RegisterAccountPage.writeTextInFirstnameField();
         RegisterAccountPage.writeTextInLastnameField();
         RegisterAccountPage.writeTextInEmailField();
@@ -15,7 +14,6 @@ public class RegisterAccountPageTest extends BaseTest{
         RegisterAccountPage.writeTextInConfirmPasswordField();
         RegisterAccountPage.selectPrivacyCheckbox();
         RegisterAccountPage.clickContinueButton();
-        RegisterAccountPage.waitUntilConfirmationMessageIsVisble();
         Assert.assertEquals(RegisterAccountPage.getTextFromNewAccountSuccessMessage(), "Your Account Has Been Created!");
     }
 }

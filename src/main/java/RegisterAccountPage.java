@@ -20,10 +20,8 @@ public class RegisterAccountPage extends BasePage {
         String emailDomain = RandomStringUtils.randomAlphabetic(5);
         return emailUsername + "@" + emailDomain + ".com";
     }
-    public static void waitUntilFirstnameFieldIsVisible(){
-        WaitTool.waitUntilVisibilityOfElement(FIRSTNAME_INPUTFIELD);
-    }
     public static void writeTextInFirstnameField(){
+        WaitTool.waitUntilVisibilityOfElement(FIRSTNAME_INPUTFIELD);
         RegisterAccountPage.writeTextInField(FIRSTNAME_INPUTFIELD, "galya");
     }
     public static void writeTextInLastnameField(){
@@ -48,9 +46,7 @@ public class RegisterAccountPage extends BasePage {
         RegisterAccountPage.clickOnWebElement(CONTINUE_BUTTON);
     }
     public static String getTextFromNewAccountSuccessMessage(){
-        return RegisterAccountPage.getTextFromWebElement(NEW_ACCOUNT_CONFIRMATION_MESSAGE);
-    }
-    public static void waitUntilConfirmationMessageIsVisble(){
         WaitTool.waitUntilVisibilityOfElement(NEW_ACCOUNT_CONFIRMATION_MESSAGE);
+        return RegisterAccountPage.getTextFromWebElement(NEW_ACCOUNT_CONFIRMATION_MESSAGE);
     }
 }
